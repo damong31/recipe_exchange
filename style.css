@@ -1,0 +1,72 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  color: #f5f5f5;
+  background: #000;
+  --muted: #bcbcbc;
+  --line: #898989;
+  --control: #363636;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { width: min(100% - 24px, 34rem); margin-inline: auto; padding: 24px 0 40px; }
+h1 { margin: 0 0 18px; font-size: clamp(2.25rem, 7vw, 3.1rem); line-height: 1.06; }
+h2, h3, h4 { margin: 0; overflow-wrap: anywhere; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.16rem; }
+h4 { font-size: 1rem; }
+p { margin: 0; line-height: 1.5; }
+.nav-actions, .section-heading, .dialog-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.section-heading, .dialog-heading { justify-content: space-between; }
+button, input, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: var(--control);
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+button, input, select { min-height: 32px; }
+button, select { padding: 3px 8px; }
+button { cursor: pointer; }
+button:hover:not(:disabled), button[aria-pressed='true'] { background: #525252; }
+:disabled { opacity: .6; cursor: default; }
+:focus-visible { outline: 2px solid #eaeaea; outline-offset: 3px; }
+input, textarea { padding: 4px 6px; max-width: 100%; }
+textarea { width: min(100%, 23rem); resize: vertical; }
+input { width: 14rem; }
+input[type='url'] { width: 20rem; }
+label { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; }
+label:has(textarea) { display: grid; justify-items: start; }
+.create-section { margin: 20px 0 14px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
+.create-section > .hint { margin-bottom: 12px; }
+form, fieldset { display: grid; justify-items: start; gap: 14px; }
+fieldset { width: 100%; min-width: 0; border: 0; margin: 0; padding: 0; }
+.filters { display: grid; gap: 10px; padding: 12px 0 14px; border-bottom: 1px solid var(--line); }
+.filters select {
+  appearance: none;
+  padding-right: 24px;
+  background: linear-gradient(45deg, transparent 50%, #ddd 50%) right 12px center / 5px 5px no-repeat,
+    linear-gradient(135deg, #ddd 50%, transparent 50%) right 7px center / 5px 5px no-repeat var(--control);
+}
+.hint, .empty { color: var(--muted); font-size: .875rem; }
+.empty { padding-block: 15px; }
+.recipe { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.recipe-copy { display: grid; justify-items: start; gap: 10px; overflow-wrap: anywhere; }
+.recipe-image { width: min(100%, 17rem); }
+.recipe-image img { display: block; max-width: 100%; max-height: 12rem; object-fit: contain; }
+.image-fallback { padding: 8px 0; color: var(--muted); }
+.ingredients { margin: 0; padding-left: 22px; }
+.byline { font-style: italic; }
+.error, .danger-text { color: #ffb6b6; }
+.danger { background: #772c2c; }
+dialog { width: min(100% - 24px, 28rem); padding: 18px; border: 1px solid var(--line); border-radius: 4px; background: #171717; }
+dialog::backdrop { background: #000a; }
+.dialog-heading { margin-bottom: 14px; }
+dialog > p { margin-bottom: 12px; }
+.close { width: 34px; font-size: 1.125rem; }
